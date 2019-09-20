@@ -1,24 +1,28 @@
-import React from 'react';
-import { render } from 'react-dom';
+import React from "react"
+import ReactDOM from "react-dom"
 
-class Hello extends React.Component {
+const divStyle  = {
+   background: '#dfdfdf',
+   color: '#000',
+   border: '1px solid red',
+   padding: '5px',
+   borderRadius: '5px',
+   fontFamily: 'Helvetica',
+   lineHeight: '20px;'
+};
 
-render() {
-
-    //JSX code in return function     
-
-    return (
-
-       <div>
-
-          <h1>Hello World!</h1>
-
-       </div>
-
-    );
-
- }
-
+function MyInfo() {
+  return (
+    <div style={divStyle}>
+      <h1>Bob Ziroll</h1>
+      <p>This is a paragraph about me...</p>
+      <ul>
+        <li>Thailand</li>
+        <li>Japan</li>
+        <li>Nordic Countries</li>
+      </ul>
+    </div>
+  )
 }
 
-render(<Hello/>, document.getElementById('app'));
+ReactDOM.render(<MyInfo />, document.getElementById("root"))
