@@ -1,21 +1,28 @@
 import React from "react"
 
-const divStyle  = {
-    background: '#dfdfdf',
-    color: '#000',
-    border: '1px solid red',
-    padding: '5px',
-    borderRadius: '5px',
-    fontFamily: 'Helvetica',
-    lineHeight: '20px'
- };
- 
  function MyMainContainer() {
+    let firstName = "Bob"
+    let lastName = "Mike"
+    let dt = new Date().getHours();
+    let greet;
+    if(dt >= 0 && dt < 12){
+        greet = 'Morning'
+    }
+    else if(dt >= 12 && dt < 16){
+        greet = 'Afternoon'
+    }
+    else if(dt >= 16 && dt < 20){
+        greet = 'Good evening'
+    }
+    else{
+        greet = 'Goodnight'
+    }
+    
    return (
        <section>
-           <div style={divStyle}>
-                <h1>Bob Ziroll</h1>
-                <p>This is a paragraph about me...</p>
+           <div>
+                <h1>{`${firstName} ${lastName}`} its {dt % 12} o'clock</h1>
+                <p>{greet}</p>
                 <ul>
                     <li>Thailand</li>
                     <li>Japan</li>
